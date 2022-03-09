@@ -15,14 +15,16 @@ WINEPREFIX=~/.WineApps/Adobe-Photoshop wineboot
 
 WINEPREFIX=~/.WineApps/Adobe-Photoshop ./winetricks win10
 
-curl -L "https://drive.google.com/uc?export=download&id=1qcmyHzWerZ39OhW0y4VQ-hOy7639bJPO" > allredist.tar.xz
-mkdir allredist
-tar -xf allredist.tar.xz -C
-rm -rf allredist.tar.xz
-curl -L "https://download854.mediafire.com/kj7h8gkorsvg/dhvztovo7gj738e/AdobePhotoshop2021.tar.xz" > AdobePhotoshop2021.tar.xz
-mkdir AdobePhotoshop2021
-tar -xf AdobePhotoshop2021.tar.xz
-rm -rf AdobePhotoshop2021.tar.xz
+
+#This is all horribly broken, just download them separately
+#curl -L "https://drive.google.com/uc?export=download&id=1qcmyHzWerZ39OhW0y4VQ-hOy7639bJPO" > allredist.tar.xz
+#mkdir allredist
+#tar -xf allredist.tar.xz
+#rm -rf allredist.tar.xz
+#curl -L "https://download854.mediafire.com/kj7h8gkorsvg/dhvztovo7gj738e/AdobePhotoshop2021.tar.xz" > AdobePhotoshop2021.tar.xz
+#mkdir AdobePhotoshop2021
+#tar -xf AdobePhotoshop2021.tar.xz
+#rm -rf AdobePhotoshop2021.tar.xz
 
 
 WINEPREFIX=~/.WineApps/Adobe-Photoshop ./winetricks fontsmooth=rgb gdiplus msxml3 msxml6 atmlib corefonts dxvk
@@ -45,16 +47,16 @@ mv allredist/launcher.sh ~/.WineApps/Adobe-Photoshop/drive_c
 mv allredist/photoshop.png ~/.local/share/icons
 mv allredist/photoshop.desktop ~/.local/share/applications
 
-rm -rf allredist
-rm -rf winetricks
-rm -rf winetricks.1
-rm -rf setup_vkd3d_proton.sh
+#rm -rf allredist
+#rm -rf winetricks
+#rm -rf winetricks.1
+#rm -rf setup_vkd3d_proton.sh
 if [ $cameraraw = "1" ]
 then
 echo "Just follow the setup from Camera Raw."
 curl -L "https://download.adobe.com/pub/adobe/photoshop/cameraraw/win/12.x/CameraRaw_12_2_1.exe" > CameraRaw_12_2_1.exe
 WINEPREFIX=~/.WineApps/Adobe-Photoshop wine CameraRaw_12_2_1.exe
-rm -rf CameraRaw_12_2_1.exe
+#rm -rf CameraRaw_12_2_1.exe
 else
 	echo ""
 fi
